@@ -1,3 +1,31 @@
 <template>
-    
+    <template if:true={showSpinner}>
+        <lightning-spinner class="slds-is-fixed" variant="brand" size="medium"></lightning-spinner>
+    </template>
+
+    <div class="slds-gutters slds-wrap slds-box slds-theme_default">
+        <lightning-combobox
+            name="stateSelect"
+            label="State"
+            value={value}
+            placeholder="Select State"
+            options={stateOptions}
+            onchange={handleStateSelect}
+            class="slds-p-around_small"
+        ></lightning-combobox>
+
+        <lightning-input
+            type="text"
+            label="City"
+            onchange={handleInputChange}
+            class="slds-p-around_small"
+        ></lightning-input>
+
+        <lightning-button
+            label="Search"
+            title="Search"
+            onclick={handleClick}
+            class="slds-p-around_small"
+        ></lightning-button>
+    </div>
 </template>
